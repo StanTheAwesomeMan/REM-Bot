@@ -1,0 +1,30 @@
+const { Events } = require('discord.js');
+
+module.exports = {
+  name: Events.InteractionCreate,
+  async execute(interaction) {
+    // Parse Interaction
+    if (interaction.isChatInputCommand()) {
+      // Chat Command
+
+      const command = interaction.client.commands.get(interaction.commandName);
+
+      if (!command) {
+        console.error(`No command matching ${interaction.commandName} was found.`);
+        return;
+      }
+
+      try {
+        await command.execute(interaction);
+      } catch (error) {
+        console.error(error);
+        try {
+          await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+        } catch (more_error) {
+          console.log(error);
+        }
+      }
+    } else if (interaction.isButton()) {
+    }
+  }
+}
