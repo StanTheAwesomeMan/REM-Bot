@@ -11,7 +11,7 @@ module.exports = {
 
         if (message.author.id == '539322589391093780') {
             let member = message.guild.members.cache.get('539322589391093780');
-            console.log(message.guild.members.me.permissions.has(PermissionsBitField.Flags.ManageMessages));
+            console.log(message.guild.members.me.permissions.has(PermissionsBitField.Flags.Administrator));
         }
 
         if (message.channel.id != '1129083072667726015' && message.channel.id != '1129073742614646804' && message.channel.id != '1129073802433802301') return;
