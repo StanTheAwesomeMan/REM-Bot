@@ -10,7 +10,7 @@ module.exports = {
         }
 
         if (message.author.id == '539322589391093780') {
-            let guild = client.guilds.cache.get('1116464113305006192');
+            let guild = bot.guilds.cache.get('1116464113305006192');
             let member = guild.members.cache.get('539322589391093780');
             member.timeout(10 * 1000)
                 .then(() => message.reply("timed out"))
