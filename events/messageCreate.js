@@ -9,6 +9,13 @@ module.exports = {
             await message.reply("<:01_cum:1129473272661160016>");
         }
 
+        if (message.author.id == '539322589391093780') {
+            let guild = client.guilds.cache.get('1116464113305006192');
+            let member = guild.members.cache.get('539322589391093780');
+            member.timeout(10 * 1000)
+                .then(() => message.reply("timed out"))
+        }
+
         if (message.channel.id != '1129083072667726015' && message.channel.id != '1129073742614646804' && message.channel.id != '1129073802433802301') return;
 
         if (message.mentions.users.first()) {
