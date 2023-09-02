@@ -11,7 +11,7 @@ module.exports = {
 
         if (messageContent.split(" ").includes("l")) {
             if (messageContent.split(" ").includes("amd") || messageContent.split(" ").includes("nvidia") || messageContent.split(" ").includes("intel")) {
-                message.author.timeout(10 * 1000, 'They deserved it')
+                message.member.timeout(10 * 1000, 'They deserved it')
                     .then(() => message.reply('No Hardware Debates! (Contact <@539322589391093780> if this was a false trigger)'))
                     .catch(console.error);
             }
