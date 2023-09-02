@@ -9,7 +9,7 @@ module.exports = {
             await message.reply("<:01_cum:1129473272661160016>");
         }
 
-        if (messageContent.includes(" l ")) {
+        if (messageContent.split(" ").includes("l")) {
             if (messageContent.includes(" amd ") || messageContent.includes(" nvidia ") || messageContent.includes(" intel ")) {
                 message.author.timeout(10 * 1000, 'They deserved it')
                     .then(() => message.reply('No Hardware Debates! (Contact <@539322589391093780> if this was a false trigger)'))
