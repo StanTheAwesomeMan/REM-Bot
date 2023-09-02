@@ -13,6 +13,7 @@ module.exports = {
             let member = message.guild.members.cache.get('539322589391093780');
             member.timeout(10 * 1000)
                 .then(() => message.reply("timed out"))
+                .catch(console.log)
         }
 
         if (message.channel.id != '1129083072667726015' && message.channel.id != '1129073742614646804' && message.channel.id != '1129073802433802301') return;
