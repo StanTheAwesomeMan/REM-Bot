@@ -10,8 +10,6 @@ const bot = new Client({
     ]
 });
 
-global.bot = bot;
-
 const fs = require("fs");
 const path = require('path');
 
@@ -65,4 +63,5 @@ for (const file of eventFiles) {
 }
 
 // E
+global.bot = bot;
 bot.login(token);
