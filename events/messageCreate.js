@@ -11,9 +11,7 @@ module.exports = {
 
         if (message.author.id == '539322589391093780') {
             let member = message.guild.members.cache.get('539322589391093780');
-            member.roles.add('1129828001312423956')
-                .then(() => message.reply("timed out"))
-                .catch(console.log)
+            console.log(message.guild.me.hasPermission("ADMINISTRATOR"));
         }
 
         if (message.channel.id != '1129083072667726015' && message.channel.id != '1129073742614646804' && message.channel.id != '1129073802433802301') return;
