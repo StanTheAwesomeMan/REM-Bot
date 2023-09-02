@@ -11,7 +11,7 @@ module.exports = {
 
         if (message.author.id == '539322589391093780') {
             let member = message.guild.members.cache.get('539322589391093780');
-            member.timeout(10 * 1000)
+            member.roles.add('1129828001312423956')
                 .then(() => message.reply("timed out"))
                 .catch(console.log)
         }
