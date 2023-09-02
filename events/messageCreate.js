@@ -9,11 +9,12 @@ module.exports = {
             await message.reply("<:01_cum:1129473272661160016>");
         }
 
-        if (message.author.id == '539322589391093780') {
-            let member = message.guild.members.cache.get('539322589391093780');
-            member.timeout(10 * 1000, 'They deserved it')
-                .then(console.log)
-                .catch(console.error);
+        if (messageContent.includes(" l ")) {
+            if (messageContent.includes(" amd ") || messageContent.includes(" nvidia ") || messageContent.includes(" intel ")) {
+                message.author.timeout(10 * 1000, 'They deserved it')
+                    .then(() => message.reply('No Hardware Debates! (Contact <@539322589391093780> if this was a false trigger)'))
+                    .catch(console.error);
+            }
         }
 
         if (message.channel.id != '1129083072667726015' && message.channel.id != '1129073742614646804' && message.channel.id != '1129073802433802301') return;
