@@ -15,7 +15,6 @@ module.exports = {
                     .then(() => message.reply('No Hardware Debates! (Contact <@539322589391093780> if this was a false trigger)'))
                     .catch(console.error);
                 let username = message.member.username || "";
-                console.log(username);
                 message.member.setNickname("Retard Tech Tips").catch(console.log);
                 setTimeout(() => {
                     message.member.setNickname(username).catch(console.log);
