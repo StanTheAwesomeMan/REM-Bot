@@ -25,6 +25,11 @@ module.exports = {
 
         const { stdout, stderr } = await exec(command);
 
-        await interaction.editReply({content: `Output: ${stdout}`, ephemeral: true});
+        if (stderr) {
+            await interaction.editReply({content: `ERROR: \`\`\`${stdout}\`\`\``, ephemeral: true});
+            return;
+        }
+
+        await interaction.editReply({content: `Output: \`\`\`${stdout}\`\`\``, ephemeral: true});
     },
 };
