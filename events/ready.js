@@ -37,9 +37,9 @@ module.exports = {
         bot.channels.cache.get(channelidfile.channel).send("Online!");
 
         // Set the Presence of the bot user
-        bot.user.setPresence({ activity: { name: 'with Bea for ' + getUptime() }, status: 'online' });
+        bot.user.setPresence({ activities: [{ name: 'with Bea for ' + getUptime() }], status: 'online' });
         setInterval(() => {
-            bot.user.setPresence({ activity: { name: 'with Bea for ' + getUptime() }, status: 'online' });
+            bot.user.setPresence({ activities: [{ name: 'with Bea for ' + getUptime() }], status: 'online' });
         }, 30000);
 
     }
