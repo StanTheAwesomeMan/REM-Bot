@@ -20,6 +20,6 @@ module.exports = {
 
         const { stdout, stderr } = await exec("echo hello world!");
 
-        message.reply({content: 'test', ephemeral: true});
+        await interaction.reply({content: 'test', ephemeral: true});
     },
 };
