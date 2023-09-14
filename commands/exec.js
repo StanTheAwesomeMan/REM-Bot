@@ -20,6 +20,6 @@ module.exports = {
 
         const { stdout, stderr } = await exec("echo hello world!");
 
-        message.reply({content: `Output: ${stdout}`, ephemeral: true});
+        message.reply({content: 'test', ephemeral: true});
     },
 };
