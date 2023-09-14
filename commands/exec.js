@@ -18,7 +18,7 @@ module.exports = {
             return;
         }
 
-        const { stdout, stderr } = await exec(interaction.options.get('command').value);
+        const { stdout, stderr } = await exec("echo hello world!");
 
         message.reply({content: `Output: ${stdout}`, ephemeral: true});
     },
