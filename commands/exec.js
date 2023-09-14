@@ -18,11 +18,13 @@ module.exports = {
             return;
         }
 
+        await interaction.reply({content: 'Executing...', ephemeral: true});
+
         const option = interaction.options.get('command');
         const command = option.value;
 
         const { stdout, stderr } = await exec(command);
 
-        await interaction.reply({content: `Output: ${stdout}`, ephemeral: true});
+        await interaction.editReply({content: `Output: ${stdout}`, ephemeral: true});
     },
 };
