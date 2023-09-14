@@ -23,12 +23,13 @@ module.exports = {
         const option = interaction.options.get('command');
         const command = option.value;
 
-        const { stdout, stderr } = await exec(command);
-
-        if (stderr != "") {
+        try {
+             const { stdout, stderr } = await exec(command);
+        } catch (x) {
             await interaction.editReply({content: `ERROR: \`\`\`${stderr}\`\`\``, ephemeral: true});
-        } else {
-            await interaction.editReply({content: `Output: \`\`\`${stdout}\`\`\``, ephemeral: true});
+            return;
         }
+
+        await interaction.editReply({content: `Output: \`\`\`${stdout}\`\`\``, ephemeral: true});
     },
 };
