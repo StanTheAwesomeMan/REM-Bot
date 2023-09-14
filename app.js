@@ -62,6 +62,6 @@ for (const file of eventFiles) {
     }
 }
 
-// E
+// A
 global.bot = bot;
 bot.login(token);
