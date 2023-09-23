@@ -11,7 +11,7 @@ module.exports = {
 
         if (message.mentions.members.first()) {
             message.mentions.members.forEach(member => {
-                console.log(member.displayName);
+                console.log(member.user.id);
             })
         }
 
