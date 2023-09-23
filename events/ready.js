@@ -37,10 +37,12 @@ module.exports = {
         bot.channels.cache.get(channelidfile.channel).send("Online!");
 
         bot.guilds.cache.forEach( async guild => {
+            var msgString = `Guild: ${guild.name}\n`
             var allMembers = await guild.members.fetch();
             allMembers.forEach(async member => {
-                bot.channels.cache.get(channelidfile.channel).send(`Guild: ${guild.name}, Name: ${member.displayName}`); 
+                msgString = `${msgstring}    User: ${user.displayName}\n`
             })
+            bot.channels.cache.get(channelidfile.channel).send(msgString)
         })
 
         // Set the Presence of the bot user
