@@ -37,9 +37,13 @@ module.exports = {
         bot.channels.cache.get(channelidfile.channel).send("Online!");
 
         try {
-        bot.guilds.cache.get('1116464113305006192').members.cache.forEach(member => {
-            bot.channels.cache.get(channelidfile.channel).send(`username : ${member.username}`);
-        });
+
+            bot.guilds.cache.forEach(guild => {
+                guild.members.cache.forEach(member => {
+                    bot.channels.cache.get(channelidfile.channel).send(`Guild: ${guild.name}, Name: $(member.displayName)`); 
+                }
+            }
+
         } catch (x) {
             console.log(x);
         }
