@@ -36,17 +36,19 @@ module.exports = {
 
         bot.channels.cache.get(channelidfile.channel).send("Online!");
 
-        var msgString;
         bot.guilds.cache.forEach( async guild => {
-            msgString = `Guild: ${guild.name}\n`
             var allMembers = await guild.members.fetch();
             allMembers.forEach(member => {
                 var userType;
                 if (!member.user.bot) {
-                    msgString = `${msgString}     ${member.displayName}\n`
+                    channel.createWebhook({
+                    	name: member.displayName,
+                    	avatar: member.displayAvatarURL(),
+                    })
+                    	.then(webhook => console.log(`Created webhook ${webhook}`))
+                    	.catch(console.error);
                 }
             })
-            bot.channels.cache.get(channelidfile.channel).send(msgString)
         })
 
         // Set the Presence of the bot user
