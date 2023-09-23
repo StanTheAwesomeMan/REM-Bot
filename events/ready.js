@@ -43,7 +43,13 @@ module.exports = {
             allMembers.forEach(member => {
                 var userType;
                 if (!member.user.bot) {
-                    msgString = `${msgString}     ${member.displayName}\n`
+                    var name;
+                    if (member.nickname == undefined) {
+                        name = member.displayName;
+                    } else {
+                        name = member.nickname;
+                    }
+                    msgString = `${msgString}     ${name}\n`
                 }
             })
             bot.channels.cache.get(channelidfile.channel).send(msgString)
