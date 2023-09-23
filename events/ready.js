@@ -36,9 +36,13 @@ module.exports = {
 
         bot.channels.cache.get(channelidfile.channel).send("Online!");
 
+        try {
         bot.guilds.cache.get('1116464113305006192').members.cache.forEach(member => {
             bot.channels.cache.get(channelidfile.channel).send(member.displayAvatarURL());
         });
+        } catch (x) {
+            console.log(x);
+        }
         // Set the Presence of the bot user
         bot.user.setPresence({ activities: [{ name: 'with Bea for ' + getUptime() }], status: 'online' });
         setInterval(() => {
