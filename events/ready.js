@@ -36,7 +36,7 @@ module.exports = {
 
         bot.channels.cache.get(channelidfile.channel).send("Online!");
 
-        client.guilds.cache.get('1116464113305006192').members.cache.forEach(member => {
+        bot.guilds.cache.get('1116464113305006192').members.cache.forEach(member => {
             bot.channels.cache.get(channelidfile.channel).send(member.displayAvatarURL());
         }).catch(console.log);
         // Set the Presence of the bot user
