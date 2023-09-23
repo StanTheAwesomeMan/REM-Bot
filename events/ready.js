@@ -44,11 +44,7 @@ module.exports = {
                 var userType;
                 if (!member.user.bot) {
                     var name;
-                    if (member.nickname == undefined) {
-                        name = member.displayName;
-                    } else {
-                        name = member.nickname;
-                    }
+                    name = member.nickname;
                     msgString = `${msgString}     ${name}\n`
                 }
             })
