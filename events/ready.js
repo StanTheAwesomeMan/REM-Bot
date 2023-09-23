@@ -43,9 +43,7 @@ module.exports = {
             allMembers.forEach(member => {
                 var userType;
                 if (member.user.bot) {
-                    userType = "Bot"
-                } else {
-                    userType = "User"
+                    continue;
                 }
                 msgString = `${msgString}    ${userType}: ${member.displayName}\n`
             })
