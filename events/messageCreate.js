@@ -22,8 +22,6 @@ module.exports = {
             }
         }
 
-        if (message.channel.id != '1129083072667726015' && message.channel.id != '1129073742614646804' && message.channel.id != '1129073802433802301') return;
-
         if (message.mentions.members.first()) {
             message.mentions.members.forEach(async member => {
                 console.log(member.user.id);
@@ -36,6 +34,8 @@ module.exports = {
                 }
             })
         }
+
+        if (message.channel.id != '1129083072667726015' && message.channel.id != '1129073742614646804' && message.channel.id != '1129073802433802301') return;
 
         if (message.mentions.users.first()) {
             if (message.mentions.users.first().id == '1128741376390082610' && message.author.id == '1128425774349824103' && Math.floor(Math.random() * 100) >= 70) {
