@@ -42,7 +42,7 @@ module.exports = {
             var allMembers = await guild.members.fetch();
             allMembers.forEach(member => {
                 var userType;
-                if (member.bot) {
+                if (member.user.bot) {
                     userType = "Bot"
                 } else {
                     userType = "User"
