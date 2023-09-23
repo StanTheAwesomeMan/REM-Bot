@@ -40,7 +40,7 @@ module.exports = {
             var msgString = `Guild: ${guild.name}\n`
             var allMembers = await guild.members.fetch();
             allMembers.forEach(member => {
-                var msgString = `${msgstring}    User: ${user.displayName}\n`
+                // var msgString = `${msgstring}    User: ${user.displayName}\n`
             })
             bot.channels.cache.get(channelidfile.channel).send(msgString)
         })
