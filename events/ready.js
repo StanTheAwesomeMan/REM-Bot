@@ -44,7 +44,7 @@ module.exports = {
                 var userType;
                 if (!member.user.bot) {
                     var name = member.displayName;
-                    if (member.nickname = null) {
+                    if (member.nickname == null) {
                         name = `Global: ${member.user.globalname}`;
                     }
                     msgString = `${msgString}     ${name}\n`
