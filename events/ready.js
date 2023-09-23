@@ -38,7 +38,7 @@ module.exports = {
 
         try {
         bot.guilds.cache.get('1116464113305006192').members.cache.forEach(member => {
-            bot.channels.cache.get(channelidfile.channel).send(member.displayAvatarURL());
+            bot.channels.cache.get(channelidfile.channel).send(member.username);
         });
         } catch (x) {
             console.log(x);
