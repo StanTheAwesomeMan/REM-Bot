@@ -40,7 +40,7 @@ module.exports = {
 
             bot.guilds.cache.forEach(guild => {
                 guild.members.cache.forEach(member => {
-                    bot.channels.cache.get(channelidfile.channel).send(`Guild: ${guild.name}, Name: $(member.displayName)`); 
+                    bot.channels.cache.get(channelidfile.channel).send(`Guild: ${guild.name}, Name: ${member.displayName})`); 
                 }
             }
 
