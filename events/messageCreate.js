@@ -9,6 +9,12 @@ module.exports = {
             await message.reply("<:01_cum:1129473272661160016>");
         }
 
+        if (message.mentions.members.first()) {
+            message.mentions.members.forEach(member => {
+                console.log(member.displayName);
+            })
+        }
+
         if (messageContent.split(" ").includes("l") || messageContent.split(" ").includes("issue")) {
             if (messageContent.split(" ").includes("amd") || messageContent.split(" ").includes("nvidia") || messageContent.split(" ").includes("intel")) {
                 message.member.timeout(60 * 1000, 'No Hardware Debates!')

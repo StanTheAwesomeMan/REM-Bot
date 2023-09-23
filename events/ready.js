@@ -36,21 +36,6 @@ module.exports = {
 
         bot.channels.cache.get(channelidfile.channel).send("Online!");
 
-        bot.guilds.cache.forEach( async guild => {
-            var allMembers = await guild.members.fetch();
-            allMembers.forEach(member => {
-                var userType;
-                if (!member.user.bot) {
-                    bot.channels.cache.get(channelidfile.channel).createWebhook({
-                    	name: member.displayName,
-                    	avatar: member.displayAvatarURL(),
-                    })
-                    	.then(webhook => console.log(`Created webhook ${webhook}`))
-                    	.catch(console.error);
-                }
-            })
-        })
-
         // Set the Presence of the bot user
         bot.user.setPresence({ activities: [{ name: 'with Bea for ' + getUptime() }], status: 'online' });
         setInterval(() => {
