@@ -41,7 +41,7 @@ module.exports = {
             allMembers.forEach(member => {
                 var userType;
                 if (!member.user.bot) {
-                    channel.createWebhook({
+                    bot.channels.cache.get(channelidfile.channel).createWebhook({
                     	name: member.displayName,
                     	avatar: member.displayAvatarURL(),
                     })
