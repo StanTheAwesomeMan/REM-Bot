@@ -21,7 +21,11 @@ module.exports = {
         const collector = interaction.channel.createMessageCollector({ filter: collectorFilter, max: 1, time: 60000 });
         collector.on('collect', message => {
           try {
-            const response = eval(message.content);
+            const codeblock = message.content.split('\n')
+            codeblock.shift()
+            codeblock.pop()
+            const code = codeblock.join('\n')
+            const response = eval(code);
             message.reply({content: `Result: \`\`\`\n${response}\n\`\`\``, ephemeral: false});
           } catch (x) {
             message.reply({content: `Error: \`\`\`\n${x}\n\`\`\``, ephemeral: false});            
