@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, MessageCollector } = require('discord.js');
 const fs = require('fs');
 
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
         
         await interaction.reply({content: 'Awaiting code...', ephemeral: false});
         
-        const collector = new Discord.MessageCollector(interaction.channel, m => m.author.id === interaction.user.id, { time: 60000 });
+        const collector = new MessageCollector(interaction.channel, m => m.author.id === interaction.user.id, { time: 60000 });
         console.log(collector)
         collector.on('collect', message => {
           try {
