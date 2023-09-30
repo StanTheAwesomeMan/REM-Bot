@@ -26,7 +26,7 @@ module.exports = {
         try {
              const { stdout, stderr } = await exec(command);
              if (stdout != '') await interaction.editReply({content: `Output: \`\`\`${stdout}\`\`\``, ephemeral: true});
-             if (stdout == '')await interaction.editReply({content: 'Command did not return an output.', ephemeral: true});
+             if (stdout == '') await interaction.editReply({content: 'Command did not return an output.', ephemeral: true});
         } catch (x) {
             await interaction.editReply({content: `ERROR: \`\`\`${x}\`\`\``, ephemeral: true});
             return;
