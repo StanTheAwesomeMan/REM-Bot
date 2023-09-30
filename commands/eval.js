@@ -14,12 +14,11 @@ module.exports = {
         
         await interaction.reply({content: 'Awaiting code...', ephemeral: false});
 
-        const collectorFilter = (user) => {
-          return user.id === interaction.user.id;
+        const collectorFilter = m => {
+          return m.author.id === interaction.user.id;
         };
 
         const collector = interaction.channel.createMessageCollector({ filter: collectorFilter, max: 1, time: 60000 });
-        console.log(collector)
         collector.on('collect', message => {
           try {
             const response = eval(message.content);
