@@ -25,8 +25,7 @@ module.exports = {
             codeblock.shift()
             codeblock.pop()
             const code = codeblock.join('\n')
-            const response = eval(code);
-            message.reply({content: `Result: \`\`\`\n${response}\n\`\`\``, ephemeral: false});
+            eval(code);
           } catch (x) {
             message.reply({content: `Error: \`\`\`\n${x}\n\`\`\``, ephemeral: false});            
           }
