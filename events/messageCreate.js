@@ -12,7 +12,7 @@ module.exports = {
         // if (messageContent.split(" ").includes("l") || messageContent.split(" ").includes("issue")) {
             if (messageContent.split(" ").includes("amd") || messageContent.split(" ").includes("nvidia") || messageContent.split(" ").includes("intel")) {
                 message.member.timeout(60 * 1000, 'No Hardware Debates!')
-                    .then(() => message.reply('No Hardware Debates! (Contact <@539322589391093780> if this was a false trigger)'))
+                    .then(() => message.reply('No Hardware Debates!'))
                     .catch(console.error);
                 let username = message.member.nickname || "";
                 message.member.setNickname("Retard Tech Tips").catch(console.log);
